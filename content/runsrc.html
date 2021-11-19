@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a><li><a href='SSH.html'>SSH</a><li><a href='實作心得.html'>實作心得</a></li></ul><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='HW1-run.html'>HW1-run</a></li></ul><li><a href='HW2.html'>HW2</a><li><a href='HW3.html'>HW3</a><li><a href='Final Project.html'>Final Project</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='GitExtensions.html'>GitExtensions</a><li><a href='run.html'>run</a><li><a href='runsrc.html'>runsrc</a><li><a href='Hybrid.html'>Hybrid</a><li><a href='SSH.html'>SSH</a><li><a href='實作心得.html'>實作心得</a></li></ul><li><a href='HW1.html'>HW1</a><li><a href='HW2.html'>HW2</a><li><a href='HW3.html'>HW3</a><li><a href='Final Project.html'>Final Project</a></li>
                       </ul>
                 </nav>
               </div>
@@ -140,7 +140,6 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">run << <a href='run.html'>Previous</a> <a href='Hybrid.html'>Next</a> >> Hybrid<br /><h1>runsrc</h1>
-<h4>run在動態網頁上的 html:</h4>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h2&gt;run&lt;/h2&gt;
 &lt;!-- 導入 brython 程式庫 --&gt;
 &lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
@@ -192,7 +191,7 @@ def run():
     except:
         url = "https://gist.githubusercontent.com/mdecourse/e896a4705a95ac8cc4147b355b0e87ef/raw/8954b8280c524c5781dc3c0b3565bc489d3aa3a3/cango_gear1.py"
     prog = open(url).read()
-
+ 
     # 將程式載入編輯區
     Ace.editor.setValue(prog)
     Ace.editor.scrollToRow(0)
@@ -202,7 +201,7 @@ def run():
     #exec(prog, ns)
     # 按下 run 按鈕
     Ace.run()
-
+ 
 # 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
 doc['kw_run'].bind('click', Ace.run)
 doc['kw_show_console'].bind('click', Ace.show_console)
@@ -231,8 +230,7 @@ run()
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"&gt;&lt;/script&gt;
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"&gt;&lt;/script&gt;
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"&gt;&lt;/script&gt;</pre>
-<pre><br/><br/></pre>
-<br />run << <a href='run.html'>Previous</a> <a href='Hybrid.html'>Next</a> >> Hybrid</div>
+<p><strong><br/></strong></p><br />run << <a href='run.html'>Previous</a> <a href='Hybrid.html'>Next</a> >> Hybrid</div>
         
     <!-- footer -->
       <div class="container">

@@ -14,7 +14,6 @@
 <p><img alt="" height="486" src="https://mde.tw/cad2021_hw/images/GitExtensions_Git_config.png" width="600"/></p>
 <p>以下將請已經完成 GitExtensions 與 SSH 結合使用的學員製作"GitExtensions 導引" Wink, 說明詳細的設定流程.</p>
 <h2>run</h2>
-<p>在動態網頁上加入齒輪run</p>
 <!-- 導入 brython 程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -103,29 +102,29 @@ run()
 <script src="https://mde.tw/cp2021/cmsimde/static/gearUtils-09.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
-<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script><h2>runsrc</h2>
-<h4>run在動態網頁上的 html:</h4>
+<script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
+<h2>runsrc</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;h2&gt;run&lt;/h2&gt;
 &lt;!-- 導入 brython 程式庫 --&gt;
-&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
 &lt;!-- 啟動 Brython --&gt;
 &lt;script&gt;
 window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
 }
 &lt;/script&gt;
 &lt;p&gt;&lt;!-- 導入 FileSaver 與 filereader --&gt;&lt;/p&gt;
 &lt;p&gt;
-&lt;script src="/static/ace/FileSaver.min.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="/static/ace/filereader.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/filereader.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;!-- 導入 ace --&gt;&lt;/p&gt;
 &lt;p&gt;
-&lt;script src="/static/ace/ace.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="/static/ace/ext-language_tools.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="/static/ace/mode-python3.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="/static/ace/snippets/python.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/ace.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/ext-language_tools.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/mode-python3.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/ace/snippets/python.js" type="text/javascript"&gt;&lt;/script&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--&gt;&lt;/p&gt;
 &lt;p&gt;
@@ -156,7 +155,7 @@ def run():
     except:
         url = "https://gist.githubusercontent.com/mdecourse/e896a4705a95ac8cc4147b355b0e87ef/raw/8954b8280c524c5781dc3c0b3565bc489d3aa3a3/cango_gear1.py"
     prog = open(url).read()
-
+ 
     # 將程式載入編輯區
     Ace.editor.setValue(prog)
     Ace.editor.scrollToRow(0)
@@ -166,7 +165,7 @@ def run():
     #exec(prog, ns)
     # 按下 run 按鈕
     Ace.run()
-
+ 
 # 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
 doc['kw_run'].bind('click', Ace.run)
 doc['kw_show_console'].bind('click', Ace.show_console)
@@ -195,8 +194,7 @@ run()
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/SVGpathUtils-6v03-min.js"&gt;&lt;/script&gt;
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"&gt;&lt;/script&gt;
 &lt;script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"&gt;&lt;/script&gt;</pre>
-<pre><br/><br/></pre>
-<h2>Hybrid</h2>
+<p><strong><br/></strong></p><h2>Hybrid</h2>
 <p></p>
 <h2>SSH</h2>
 <p><span>putty</span></p>
@@ -214,7 +212,8 @@ run()
 <li>請至少練習 key in 這段英文內容三次, 然後看看是否已經了解如何透過電腦鍵盤 touch typing?</li>
 <li>接下來請利用中文輸入 <a href="https://ithelp.ithome.com.tw/articles/10206233">https://ithelp.ithome.com.tw/articles/10206233</a> 的第一段中文說明, 請利用手機計時, 大概需要多少時間?</li>
 </ol>
-<h2>HW1-run</h2><h1>HW2</h1>
+<p><br/>       </p>
+<h1>HW2</h1>
 <p>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</p>
 <p><span style="background-color: #ffff99;">HW2 必須在 2021.11.03 22:00 之前完成.</span></p>
 <p><a href="https://github.com/mdecourse/cp2021/discussions/9">HW2 具體項目成果回報區</a>將於 2021.10.25 開啟, 於 <span style="background-color: #ff99cc;">2021.11.03 22:00 關閉</span></p>
