@@ -139,9 +139,37 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Hybrid << <a href='Hybrid.html'>Previous</a> <a href='實作心得.html'>Next</a> >> 實作心得<br /><h1>SSH</h1>
-<p><span>putty</span></p>
-<br />Hybrid << <a href='Hybrid.html'>Previous</a> <a href='實作心得.html'>Next</a> >> 實作心得</div>
+    <div id="tipue_search_content">紅色方塊run含起動紐 << <a href='紅色方塊run含起動紐.html'>Previous</a> <a href='紅色方塊啟動鈕.html'>Next</a> >> 紅色方塊啟動鈕<br /><h1>作業1-紅色方塊</h1>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import browser.timer
+
+canvas = html.CANVAS(width = 400, height = 100)
+canvas.id = "game-board3"
+brython_div = doc["brython_div"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+px = 0
+py = 50
+width = 20
+height = 20
+speedx = 2
+speedy = 2
+
+def game():
+    global px, py, width, height, speedx, speedy
+    ctx.clearRect(px, py, width, height)
+    ctx.fillStyle = "red"
+    px += speedx
+    if px &gt; 200 :
+        speedx = 0
+        py += speedy
+    if py &lt; 0 or (py + height) &gt; canvas.height:
+        speedy = -speedy
+    ctx.fillRect(px, py, width, height)
+    
+browser.timer.set_interval(game, 10)</pre>
+<br />紅色方塊run含起動紐 << <a href='紅色方塊run含起動紐.html'>Previous</a> <a href='紅色方塊啟動鈕.html'>Next</a> >> 紅色方塊啟動鈕</div>
         
     <!-- footer -->
       <div class="container">
