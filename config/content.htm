@@ -298,7 +298,7 @@ run()
 <!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
 <div id="brython_div"></div>
 <h2>紅色方塊run含起動紐</h2>
-<h2>作業1-紅色方塊</h2>
+<h2>作業1-紅色方塊html</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 import browser.timer
@@ -327,8 +327,7 @@ def game():
         speedy = -speedy
     ctx.fillRect(px, py, width, height)
     
-browser.timer.set_interval(game, 10)</pre>
-<h2>紅色方塊啟動鈕</h2>
+browser.timer.set_interval(game, 10)</pre><h2>紅色方塊啟動鈕html</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 from browser import timer
@@ -375,8 +374,7 @@ def gametion(ev) :
         game = 'hold'
         doc['power'].text = '繼續'
 doc["power"].bind("click", gametion)</pre>
-<p></p>
-<h1>HW2</h1>
+<p></p><h1>HW2</h1>
 <p>HW2 - 可攜程式系統與個人網站佔學期成績 20%.</p>
 <p><span style="background-color: #ffff99;">HW2 必須在 2021.11.03 22:00 之前完成.</span></p>
 <p><a href="https://github.com/mdecourse/cp2021/discussions/9">HW2 具體項目成果回報區</a>將於 2021.10.25 開啟, 於 <span style="background-color: #ff99cc;">2021.11.03 22:00 關閉</span></p>
