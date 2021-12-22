@@ -2,7 +2,7 @@
         <head>
         <title>cp2021 homework site</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,90 +139,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW1 << <a href='HW1.html'>Previous</a> <a href='紅色方塊run含起動紐.html'>Next</a> >> 紅色方塊run含起動紐<br /><h1>紅色方塊run</h1>
-<!-- 導入 brython 程式庫 -->
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-</script>
-<p><!-- 導入 FileSaver 與 filereader --></p>
-<p>
-<script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/filereader.js" type="text/javascript"></script>
-</p>
-<p><!-- 導入 ace --></p>
-<p>
-<script src="./../cmsimde/static/ace/ace.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
-</p>
-<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
-<p>
-<script type="text/javascript">
-function doSave(storage_id, filename){
-    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
-    filename = document.getElementById(filename).value
-    saveAs(blob, filename+".py");
-}
-</script>
-</p>
-<p><!-- 印出版次與關鍵字程式 --></p>
-<p>
-<script type="text/python3">
-from browser import document as doc
-import ace
-# 清除畫布
-def clear_bd(ev):
-    bd = doc["brython_div"]
-    bd.clear()
-# Brython 3.3.4 內建的 container 名稱為  'container' 且 turtle 輸出為 svg 必須使用 div 訂定 id
-Ace = ace.Editor(editor_id="kw_editor", console_id="kw_console", container_id="kw__container", storage_id="kw_py_src" )
-# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
-def run():
-    # 利用 get 取下 src 變數值
-    try:
-        url = doc.query["src"]
-    except:
-        url = "https://gist.githubusercontent.com/KEHUEISIN/28390cc333756d3af36897062370b0aa/raw/bb28477f4c94e5691b497dab58ddd54c158d17f1/HW1-run"
-    prog = open(url).read()
-
-    # 將程式載入編輯區
-    Ace.editor.setValue(prog)
-    Ace.editor.scrollToRow(0)
-    Ace.editor.gotoLine(0)
-    # 直接執行程式
-    #ns = {'__name__':'__main__'}
-    #exec(prog, ns)
-    # 按下 run 按鈕
-    Ace.run()
-
-# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
-doc['kw_run'].bind('click', Ace.run)
-doc['kw_show_console'].bind('click', Ace.show_console)
-doc['kw_clear_console'].bind('click', Ace.clear_console)
-doc['clear_bd'].bind('click', clear_bd)
-# 呼叫函式執行
-run()
-</script>
-</p>
-<p><!-- 用來顯示程式碼的 editor 區域 --></p>
-<div id="kw_editor" style="width: 600px; height: 300px;"></div>
-<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
-<!-- 存擋表單開始 --><form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src', 'kw_filename');" type="submit" value="Save"/></form><!-- 存擋表單結束 -->
+    <div id="tipue_search_content">SSH << <a href='SSH.html'>Previous</a> <a href='實作心得.html'>Next</a> >> 實作心得<br /><h1>SSH push</h1>
+<p>Github 帳號用戶除了可以利用 Personal Token push 改版資料外, 也可以利用 SSH keys 將改版資料 push 到 Github. 詳細說明可以參考 <a href="https://mde.tw/cd2021/content/SSH%20%E4%BA%86%E6%B2%92.html">SSH 了沒</a>.</p>
+<p>以下說明 SSH push 操作步驟:</p>
+<ol>
+<li>下載 putty 安裝套件, 安裝後, 將 putty 目錄取出放入隨身碟 y:\ 目錄中 (也就是 data 目錄中).</li>
+<li>修改 start_ipv4.bat 或 start_ipv6.bat, 設定 GIT_SSH 變數, 指向 putty 套件目錄中的 plink.exe, 表示隨後的 git push 將透過 putty 中的 session 設定連網. 亦即在 start_ipv4.bat 或 start_ipv6.bat 檔案中加入 <span style="background-color: #ccffcc;">set GIT_SSH=%Disk%:\putty\plink.exe</span></li>
+<li>利用 putty 中的 puttygen.exe 建立 keys, 按下 generate 後, 在 puttygen 執行視窗上方以滑鼠隨意移動, 以便利用滑位置隨機建立 keys, 完成後在原先滑鼠移動位置所出現的 key, 即為 OpenSSH 格式的 public key 內容, 而此一內容就是要放到 Github 帳號 settings 中的 SSH and GPG keys 中的 new SSH key 欄位區 (此為用戶所設定的 public key).</li>
+<li>接下來要利用 puttygen 建立 keys 視窗右下的 save private key, 將此一 .ppk private key 存到 home_ipv4 或</li>
+<li>home_ipv6 目錄下.</li>
+<li>接下來要啟動 putty.exe 建立一個能夠連線至 github.com 網站的 session, 此 session 可以取名為 github.com, 也可以取其它名稱, 只是這個 session 名稱, 將會成為 git 指令與 plink.exe 連結使用後的連線 session 名稱. 而在設定此連線到 github.com 的 session, 在無需設定 proxy 的情況下, 只需要指定 SSH - AUTH 中的 private key 存放位置.</li>
+<li>最後則是配合採用 SSH 協定連線, 必須要修改倉儲中 .git/config url 的連線協定, 從原先的 <a href="https://github.com/帳號/cp2021_hw.git">https://github.com/帳號/cp2021_hw.git</a> 改為 <a href="mailto:git@github.com:帳號/cp2021_hw.git">git@github.com:帳號/cp2021_hw.git</a> 也就是採用 git 作為連線到 putty session 名稱 github.com, 然後採用 github 帳號檢查是否此 private key 與前述放入 Github SSH and GPG keys 的 public 成對, 若匹配成功, 則使用者利用上述的 SSH 就可以執行將改版內容 push 到 Github.</li>
+</ol>
+<p>上述採 SSH 流程 push 改版資料的基本概念為:</p>
+<ol>
+<li>啟動隨身系統時就告知 GIT_SSH 變數, 要利用 putty 工具作為 SSH 連線的 client 端.</li>
+<li>接著要建立 OpenSSH 格式的 public key, 在 Github 帳號下完成登記.</li>
+<li>至於近端則要儲存與送到 Github public 對應的 putty 格式 private key, 因為設定 putty session 時會用到此 private key.</li>
+<li>接著就是利用這把近端的 private key, 建立一個能夠採 SSH 協定連線到 Github 的 putty session, 此 session 其實只有三個基本屬性: 連線主機符號名稱, 也就是 github.com, 連線 session 名稱, 以及與 session 對應的 private key 位置.</li>
+<li>最後就是修改要採 SSH push 的倉儲中 .git/config url 連線協定, 從 https 改為 SSH, 並以 git 作為登入帳號, 且宣告所要使用的 putty session 名稱與登入後要驗證 key 權限的 session 名稱.</li>
+</ol>
 <p></p>
-<!-- 執行與清除按鈕開始 -->
-<p><button id="kw_run">Run</button> <button id="kw_show_console">Output</button> <button id="kw_clear_console">清除輸出區</button><button id="clear_bd">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
-<!-- 執行與清除按鈕結束 -->
-<p></p>
-<!-- 程式執行 ouput 區 -->
-<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console"></textarea></div>
-<!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 -->
-<div id="brython_div"></div><br />HW1 << <a href='HW1.html'>Previous</a> <a href='紅色方塊run含起動紐.html'>Next</a> >> 紅色方塊run含起動紐</div>
+<br />SSH << <a href='SSH.html'>Previous</a> <a href='實作心得.html'>Next</a> >> 實作心得</div>
         
     <!-- footer -->
       <div class="container">
