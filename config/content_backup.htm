@@ -1091,10 +1091,11 @@ run()
 <h1>期末作業</h1>
 <p><span style="background-color: #ffff00;">按鈕</span>生成心得:我發現只需要在原有的地方在多加一個Button,下面加一個驅動程式即可。</p>
 <p><strong></strong><span style="background-color: #ffff00;">Final1</span>心得:我從老師cp2021的網站發現建立座位表這個run經過層層修改終於做了出來了</p>
-<p><span style="background-color: #ffff00;">Final2</span>心得:跟組員討論得出的結果。</p>
+<p><span style="background-color: #ffff00;">Final2</span>心得:有參考其他組員的程式並討論得出的結果。</p>
 <p><span style="background-color: #ffff00;">w13</span>心得:有參考其他同學的程式，並且有跟其他組組員討論</p>
-<p><span><span style="background-color: #ffff00;">Final3</span>心得:Final2的延伸，有參考同學的，也有參考老師寫的</span></p>
-<p><a href="/downloads/w12demo.txt"></a><span><span style="background-color: #ffff00;">期末3</span>心得:多加了一個if使得綠色方塊能回到原點</span></p>
+<p><span style="background-color: #ffff00;">期末3</span>心得:多加了一個if使得綠色方塊能回到原點</p>
+<p><span><span style="background-color: #ffff00;">Final3</span>心得:Final2的延伸，有參考同學的，也有參考老師寫的，我發現其實就是把snake的程式拆成好幾段來寫，只能看得懂大概，一直卡在方塊移動的地方‧</span></p>
+<p><a href="/downloads/w12demo.txt"></a></p>
 <!-- 導入 brython 程式庫 -->
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -1133,9 +1134,12 @@ function doSave(storage_id, filename){
 <script src="https://mde.tw/cp2021/cmsimde/static/sylvester.js"></script>
 <script src="https://mde.tw/cp2021/cmsimde/static/PrairieDraw.js"></script>
 </p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button></p>
+<p><span style="color: #ff00ff;">w12 網頁內容</span></p>
+<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC fla</button></p>
+<p><span style="color: #ff00ff;">作業內容</span></p>
 <p><button id="Final1">Final1</button><button id="w13">w13</button><button id="HW1">HW1</button><button id="run1">run1</button><button id="Final2">Final2</button><button id="snake">snake</button></p>
-<p><button id="期末3">期末3</button><button id="Final3">Final3</button></p>
+<p><span style="color: #ff00ff;">期末測驗</span></p>
+<p><button id="期末3">期末3</button><button id="Final3">Final3</button><button id="合併">合併</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
 <p><!-- 用來顯示程式碼的 editor 區域 --></p>
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
@@ -1231,7 +1235,7 @@ rocflag = button2(rocflag_url)
 doc["rocflag"].bind("click", rocflag.do)
 ################################## rocflag end
 ################################## Final1 start
-Final1_url = "https://gist.githubusercontent.com/KEHUEISIN/b18f29d3badf8831f72beddf540019f3/raw/7872dfdf9b3a6cd05b08e1b00770e3a847d946b2/Final_1.py"
+Final1_url = "https://gist.githubusercontent.com/KEHUEISIN/b18f29d3badf8831f72beddf540019f3/raw/603a158eaba7bc0074b6b740be655cc5a1753989/Final_1.py"
 Final1 = button2(Final1_url)
 doc["Final1"].bind('click', Final1.do)
 ################################## Final1 end
@@ -1266,10 +1270,15 @@ doc["Final2"].bind('click', Final2.do)
 doc["期末3"].bind('click', 期末3.do)
 ################################## 期末3 end
 ################################## Final3 start
-Final3_url = "https://gist.githubusercontent.com/KEHUEISIN/40062b612148ac444dcc4f8b87e6a168/raw/3d2a1f300ad580d8e1f10bfab672a171b7a45730/Final3-1"
+Final3_url = "https://gist.githubusercontent.com/KEHUEISIN/40062b612148ac444dcc4f8b87e6a168/raw/8725b7845a697c0de8c7f7b694de6c4d077423a8/Final3-1"
 Final3 = button2(Final3_url)
 doc["Final3"].bind('click', Final3.do)
 ################################## Final3 end
+################################## 合併 start
+合併_url = "https://gist.githubusercontent.com/KEHUEISIN/bfb2b4b5ecb2db7c9210d4c078526ac0/raw/f5741e2863f4e7b10fd3018dcb29a2db8219ec70/36"
+合併 = button2(合併_url)
+doc["合併"].bind('click', 合併.do)
+################################## 合併 end
 </script>
 </p><h1>Final Project</h1>
 <p>Final Project 佔學期成績 30%</p>
